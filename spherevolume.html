@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            width: 450px;
+            margin: 0 auto;
+            margin-top: 150px;
+            background-color: #f5f5f5; /* Add a background color to create a box */
+            padding: 20px; /* Add some padding to the container */
+            border-radius: 10px; /* Add rounded corners to the container */
+            box-shadow: 0px 0px 10px #888; /* Add a shadow to the box */
+        }
+
+        }
+        h1 {
+            color: #333;
+        }
+        #container {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #f5f5f5; /* Add a background color to create a box */
+            padding: 20px; /* Add some padding to the container */
+            border-radius: 10px; /* Add rounded corners to the container */
+            box-shadow: 0px 0px 10px #888; /* Add a shadow to the box */
+        }
+        label {
+            display: block; /* Display label on a new line */
+            text-align: left; /* Left-align the label text */
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%; /* Make the button span the width of the container */
+        }
+        #result {
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body >
+    <h1>Sphere Volume Calculator</h1>
+    <div id="container">
+        <label for="radius">Enter the radius of the sphere:</label>
+        <input type="number" id="radius" placeholder="Enter radius" step="any" required>
+        <button onclick="calculateVolume()">Calculate</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateVolume() {
+            const radius = parseFloat(document.getElementById("radius").value);
+            if (!isNaN(radius)) {
+                const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+                document.getElementById("result").innerText = `Volume of the sphere is: ${volume.toFixed(2)}`;
+            } else {
+                document.getElementById("result").innerText = "Please enter a valid radius.";
+            }
+        }
+    </script>
+</body>
+</html>
